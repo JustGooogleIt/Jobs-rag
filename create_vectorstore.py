@@ -7,7 +7,13 @@ from langchain_huggingface import HuggingFaceEmbeddings
 from PyPDF2 import PdfReader
 from docx import Document
 
-from config import CHUNK_SIZE, CHUNK_OVERLAP, VECTORSTORE_DIR, HUGGINGFACEHUB_API_TOKEN
+from config import (
+  CHUNK_SIZE,
+  CHUNK_OVERLAP,
+  VECTORSTORE_DIR,
+  HUGGINGFACEHUB_API_TOKEN,
+  EMBEDDING_MODEL
+)
 
 os.environ["HUGGINGFACEHUB_API_TOKEN"] = HUGGINGFACEHUB_API_TOKEN
 
@@ -41,7 +47,7 @@ def chunk_documents(docs):
   return chunks
 
 def get_embeddings(chunks):
-  embedder = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+  embedder = HuggingFaceEmbeddings(model_name=EMBEDDING_MODEL)
   return embedder.embed_documents(chunks)
 
 def create_vectorstore():
