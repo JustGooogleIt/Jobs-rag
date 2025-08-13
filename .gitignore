@@ -1,0 +1,11 @@
+.vscode
+.DS_Store
+
+__pycache__
+.venv
+
+config.py
+client_secrets.json
+
+downloads
+jobs_vector_index
