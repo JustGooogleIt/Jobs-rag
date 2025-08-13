@@ -6,8 +6,8 @@ This project is a Retrieval-Augmented Generation (RAG) pipeline that lets you ch
 
 1. Create a virtual environment and activate it:
 ```bash
-python3 -m venv venv
-source venv/bin/activate
+python3 -m venv .venv
+source .venv/bin/activate
 ```
 
 2. Install dependencies
