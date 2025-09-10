@@ -53,7 +53,7 @@ def get_embeddings(chunks):
 def create_vectorstore():
   texts = extract_all_texts()
   chunks = chunk_documents(texts)
-  embedder = HuggingFaceEmbeddings()
+  embedder = HuggingFaceEmbeddings(model_name=EMBEDDING_MODEL)
   vectorstore = FAISS.from_texts(chunks, embedder)
   vectorstore.save_local(VECTORSTORE_DIR)
 
